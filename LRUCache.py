@@ -49,3 +49,16 @@ class LRUCache:
             new_node = ListNode(key, value)
             self.cache[key] = new_node
             self._add_node(new_node)
+
+
+cache = LRUCache(2)
+cache.put(1, 1)
+cache.put(2, 2)
+print(cache.get(1))  # Output: 1 
+cache.put(3, 3)
+print(cache.get(2))  # Output: -1 
+cache.put(4, 4)
+print(cache.get(1))  # Output: -1 
+print(cache.get(3))  # Output: 3 
+print(cache.get(4))  # Output: 4 
+
